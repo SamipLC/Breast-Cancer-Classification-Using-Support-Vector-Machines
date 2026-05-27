@@ -5,19 +5,19 @@ This project demonstrates the classification of breast cancer tumors (malignant 
 ## Dataset
 The project utilizes the Wisconsin Breast Cancer dataset provided by `scikit-learn` (`load_breast_cancer`). It contains 30 numerical features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, with a total of 569 samples.
 
-![Distribution of mean radius](image_f97bbd.png)
+![Distribution of mean radius](Screenshot 2026-05-26 231949.png)
 
 ## Project Workflow
 1. **Data Preprocessing:** The dataset is split into training (70%), validation (15%), and test (15%) sets. Features are scaled using `StandardScaler` to ensure unit variance and zero mean, which is critical for SVM distance calculations.
 2. **Linear SVM:** Models are trained using a linear kernel to explore the effect of the regularization parameter `C` on validation accuracy and the trade-off between underfitting and overfitting.
 
-![Validation Accuracy vs C](image_f97bc4.png)
+![Validation Accuracy vs C](Screenshot 2026-05-26 231957.png)
 
 3. **Non-Linear SVM (RBF Kernel):** A grid search approach is used to tune both `C` and `gamma` parameters, allowing the model to capture non-linear relationships without overfitting the training data.
 4. **Final Evaluation:** The best hyperparameter combination is evaluated on the unseen test set using metrics like Accuracy, Precision, Recall, F1-Score, and a Confusion Matrix.
 5. **Decision Boundary Visualization:** A 2D visualization (using mean radius and mean texture) compares the rigid geometric boundary of the Linear SVM against the flexible, contoured boundary of the RBF SVM.
 
-![Decision Boundary Visualization](image_f97e6d.png)
+![Decision Boundary Visualization](Screenshot 2026-05-26 232006.png)
 
 ## Best Model Results
 The optimal model was identified as the **RBF SVM** with `C=10` and `gamma=0.001`. 
